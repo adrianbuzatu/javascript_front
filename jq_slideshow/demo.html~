@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>Demo Slideshow</title>
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+		<script type="text/javascript" src="slideshow.js"></script>
+		<style type="text/css">
+			* {
+			  margin:0;
+			  padding:0;
+			  font:normal 13px Verdana, Geneva, sans-serif;
+			  color:#666;
+			}
+			.slide h2, .slide p {
+			  margin:15px;
+			}
+			.slide h2 {
+			  font:italic 24px Georgia, "Times New Roman", Times, serif;
+			  color:#ccc;
+			  letter-spacing:-1px;
+			}
+			.slide img {
+			  float:right;
+			  /*margin:0 15px;*/
+			}
+			#slidesContainer {
+			  margin:0 auto;
+			  width:215px;
+			  height:263px;
+			  overflow:hidden; /* allow scrollbar */
+			  position:relative;
+			}
+			#slidesContainer .slide {
+			  margin:0 auto;
+			  width:215px; /* reduce by 20 pixels of #slidesContainer to avoid horizontal scroll */
+			  height:145px;
+			}
+			.stop, .start{
+				cursor: pointer;
+			}
+			.start{
+				display: none;
+			}
+		</style>
+	</head>
+	<body>		
+    	<div id="slidesContainer">
+      		<div class="slide">
+      			<img src="img/img_slide_01.jpg" alt="An image that says Install X A M P P for wordpress." title="im1" />
+      		</div>
+      		<div class="slide test">
+      			<img src="img/img_slide_02.jpg" title="im2" width="215" height="145" alt="A thumbnail image that says S R grunge photoshop brushes 6 high resolution grunge brushes by six revisions." />
+  			</div>
+  			<div class="slide">
+  				<img src="img/img_slide_03.jpg" title="im3" width="215" height="145" alt="A thumbnail image that says grunge extreme 15 free high resolution grunge textures six revisions." />
+  			</div>  			
+  			<div class="slide">
+  				<img src="img/img_slide_04.jpg" title="im4" width="215" height="145" alt="Thumbnail image that says sleek button using photoshop that links to a Photoshop tutorial." />
+  			</div>
+			
+  		</div>
+  		<div style="clear:both;"></div>
+  		
+  		<div id="slider_nav">
+  			<span class="control" id="prevnav" style="cursor: pointer;">
+  				<- Previous  			
+  			</span>&nbsp;&nbsp;
+  			<span class="control" id="nextnav" style="cursor: pointer;">
+  				Next ->  			
+  			</span>
+  		</div> 
+  		<p class="stop">Pause</p> 	
+  		<p class="start">Resume</p>	
+  		<!--<p>Command:
+  			<select id="command">
+  				<option value="">---Choose one action---</option>
+  				<option value="pause">Pause</option>
+  				<option value="resume">Resume</option>
+  			</select>
+  			<input type="button" id="execute" value="Execute" />
+  		</p>-->
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$('#slidesContainer').mySlideShowPlugin();
+				$('#slidesContainer').mySlideShowPlugin('start');
+				/*$("#execute").live('click', function(){
+					if($("#command").val() != ""){
+						//$('#slidesContainer').mySlideShowPlugin('pause');
+						$('#slidesContainer').mySlideShowPlugin($("#command").val());
+					}
+				});*/
+				
+			});
+		</script>
+	</body>
+</html>
